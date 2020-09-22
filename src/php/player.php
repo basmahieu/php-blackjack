@@ -2,9 +2,6 @@
 
 declare(strict_types=1);
 
-require('Card.php');
-require('Deck.php');
-
 
 class Player
 {
@@ -39,5 +36,14 @@ class Player
     public function hasLost(bool $lost)
     {
         return $lost;
+    }
+}
+
+
+class Dealer extends Player
+{
+
+    public function __construct()
+    {
     }
 }
