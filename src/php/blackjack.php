@@ -2,8 +2,8 @@
 
 declare(strict_types=1);
 
-require('Player.php');
-require('Dealer.php');
+// require('Player.php');
+// require('Dealer.php');
 require('whatshappening.php');
 
 // Blackjack Rules
@@ -46,6 +46,6 @@ class Blackjack
 
     public function getDealer()
     {
-        return $this->Dealer;
+        return $this->dealer;
     }
 }
