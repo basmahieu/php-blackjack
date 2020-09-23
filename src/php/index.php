@@ -17,12 +17,17 @@ require 'Blackjack.php';
 
 $blackjack = new blackjack();
 // print_r($blackjack->getPlayer());
-$blackjack->getPlayer()->hit();
+// $blackjack->getPlayer()->hit();
 
+echo '<pre>';
+print_r($blackjack->getPlayer()->hit());
+echo '</pre>';
+echo '<br>';
+
+// echo '<pre>';
+// print_r($blackjack->getPlayer()->getScore());
+// echo '</pre>';
+echo '<br>';
 echo '<pre>';
 print_r($blackjack->getPlayer()->getCards());
 echo '</pre>';
-
-
-
-// whatIsHappening();

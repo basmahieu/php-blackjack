@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-
+//✔
 class Player
 {
     // property declaration
@@ -29,30 +29,34 @@ class Player
     // method declaration
     public function hit()
     {
-        // get cards ✔ 
-        // add card to player ✔
-        // Get value, above 21 lost = true
-
         $playerAddCard = $this->deck->drawCard();
         array_push($this->cards, $playerAddCard);
+
+        $score = $this->getScore();
+        if ($score > 21) {
+            echo "{$score} lost";
+        } else {
+            echo "{$score}, keep going";
+        }
     }
-
-
 
     public function Surrender()
     {
-        // code
+        return $this->lost = true;
     }
 
     public function getScore()
     {
-        // code
-
+        $totalScore = 0;
+        foreach ($this->cards as $card) {
+            $totalScore += $card->getValue();
+        }
+        return $totalScore;
     }
 
-    public function hasLost(bool $lost): bool
+    public function hasLost(): bool
     {
-        return $lost;
+        return $this->lost;
     }
 }
 
@@ -65,3 +69,15 @@ class Dealer extends Player
         // Code
     }
 }
+
+
+
+  // $sum = 0;
+        // foreach ($this->cards as $card) {
+        //     $sum += $card->getValue();
+        // }
+        // if ($sum > 21) {
+        //     $this->lost = true;
+        //     echo 'You lost = ';
+        // }
+        // echo "<b>{$sum}</b>";
