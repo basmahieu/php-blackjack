@@ -5,6 +5,9 @@ declare(strict_types=1);
 //✔
 class Player
 {
+
+
+
     // property declaration
     private array $cards = [];
     private bool $lost = false;
@@ -32,11 +35,13 @@ class Player
         $playerAddCard = $this->deck->drawCard();
         array_push($this->cards, $playerAddCard);
 
+        echo '<div  style="width:500px" class="alert alert-success mt-4">I hit the button</div>';
+
+
         $score = $this->getScore();
         if ($score > 21) {
-            echo "{$score} lost";
-        } else {
-            echo "{$score}, keep going";
+            // echo "{$score} lost";
+            return $this->lost;
         }
     }
 

@@ -2,29 +2,15 @@
 
 declare(strict_types=1);
 
-// 
-require('whatshappening.php');
-
-// Blackjack Rules
-// Cards are between 1-11 points.
-// Faces are worth 10
-// Ace is always worth 11
-// Getting more than 21 points, means that you lose.
-// To win, you need to have more points than the dealer, but not more than 21.
-// The dealer is obligated to keep taking cards until they have at least 15 points.
-// We are not playing with blackjack rules on the first turn (having 21 on first turn) 
-
-// Still to do
-// step 9: Save this instance in the session (you're gonna need it).
 
 
 
 class Blackjack
 {
     // property declaration
-    private $player;
-    private $dealer;
-    private $deck;
+    private Player $player;
+    private  $dealer;
+    private Deck $deck;
 
     // constructor
     public function __construct()
@@ -38,7 +24,7 @@ class Blackjack
 
 
     // method declaration
-    public function getPlayer()
+    public function getPlayer(): Player
     {
         return $this->player;
     }

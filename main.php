@@ -10,12 +10,13 @@
 
 <body>
     <?php
-    // require 'src/php/Blackjack.php';
-    // $blackjack = new Blackjack();
+    require 'src/php/Blackjack.php';
+    $blackjack = new Blackjack();
 
-    // if (isset($_POST["hit"])) {
-    //     $blackjack->getPlayer()->Hit($blackjack->getDeck());
-    // };
+    if (isset($_POST["hit"])) {
+        $blackjack->getPlayer()->Hit($blackjack->getDeck());
+        echo 'I hit the buttonnnnn';
+    };
     ?>
 
     <div class="player">

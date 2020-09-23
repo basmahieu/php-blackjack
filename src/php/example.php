@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 require 'Suit.php';
@@ -7,7 +8,7 @@ require 'Deck.php';
 
 $deck = new Deck();
 $deck->shuffle();
-foreach($deck->getCards() AS $card) {
+foreach ($deck->getCards() as $card) {
     echo $card->getUnicodeCharacter(true);
     echo '<br>';
 }
