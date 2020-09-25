@@ -41,17 +41,36 @@
 
         <p class="text-center" style="font-size:160px; margin-top:-60px;">
             <?= $blackjack->getPlayer()->cardsImg(); ?>
-            <h3 class="font-weight-bold text-center text-primary">
+            <h3 class="font-weight-bold text-center  
+            <?=
+                $score = $blackjack->getPlayer()->getScore();
+            if ($score < 21) {
+                echo ' text-primary';
+            } else {
+                echo ' text-danger';
+            }
+            ?>">
                 <?= $blackjack->getPlayer()->getScore(); ?>
             </h3>
     </div>
+    <!-- Dealer -->
+    <div class="bg-light container p-4 mt-4 rounded shadow p-3">
+        <h2 class="font-weight-bold text-center">Dealer</h2>
 
-    <!-- Bot -->
-    <div class="bg-light container p-4 mt-4 mb-4 rounded ">
-        <h2 class="font-weight-bold text-center">Android</h2>
-        <p>To do android
-            <p class=" text-center" style="font-size:160px; margin-top:-60px;">
-                <?= $blackjack->getPlayer()->cardsImg(); ?>
+
+        <p class="text-center" style="font-size:160px; margin-top:-60px;">
+            <?= $blackjack->getDealer()->cardsImg(); ?>
+            <h3 class="font-weight-bold text-center  
+            <?=
+                $score = $blackjack->getDealer()->getScore();
+            if ($score < 21) {
+                echo ' text-primary';
+            } else {
+                echo ' text-danger';
+            }
+            ?>">
+                <?= $blackjack->getDealer()->getScore(); ?>
+            </h3>
     </div>
 
 </body>

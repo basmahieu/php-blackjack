@@ -66,3 +66,25 @@ class Player
         return $this->lost = true;
     }
 }
+
+
+class Dealer extends Player
+{
+    public function __construct(Deck $deck)
+    {
+        $this->deck = $deck;
+        $playerCard1 = $deck->drawCard();
+        $playerCard2 = $deck->drawCard();
+        $this->cards = [$playerCard1, $playerCard2];
+    }
+
+    public function hit()
+    {
+        $playerAddCard = $this->deck->drawCard();
+
+        $score = $this->getScore();
+        if ($score <= 15) {
+            return array_push($this->cards, $playerAddCard);
+        }
+    }
+}

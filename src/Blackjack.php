@@ -8,7 +8,7 @@ class Blackjack
     // Properties
     private Deck $deck;
     private Player $player;
-    private $dealer;
+    // private Dealer $dealer;
 
     // Constructor
     public function __construct()
@@ -33,7 +33,7 @@ class Blackjack
         return $this->player;
     }
 
-    public function getDealer()
+    public function getDealer(): Dealer
     {
         return $this->dealer;
     }
