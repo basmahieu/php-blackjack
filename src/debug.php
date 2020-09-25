@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 
 // FUNCTIONS
-function whatIsHappening()
+function debug()
 {
     echo '<h2>$_GET</h2>';
     var_dump($_GET);
