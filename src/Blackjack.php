@@ -8,7 +8,7 @@ class Blackjack
     // Properties
     private Deck $deck;
     private Player $player;
-    // private Dealer $dealer;
+    private Dealer $dealer;
 
     // Constructor
     public function __construct()
@@ -17,7 +17,7 @@ class Blackjack
         $this->deck->shuffle();
 
         $this->player = new Player($this->deck);
-        // $this->dealer = new Dealer($this->deck);
+        $this->dealer = new Dealer($this->deck);
     }
 
     // Methods

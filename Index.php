@@ -38,7 +38,7 @@ if (isset($_POST["hit"])) {
 
 
 // echo '<pre>';
-// print_r($blackjack->getPlayer()->Hit());
+// print_r($blackjack->getDealer());
 // echo '</pre>';
 
 
