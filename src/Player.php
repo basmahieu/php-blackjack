@@ -46,16 +46,18 @@ class Player
         return $totalScore;
     }
 
+    // HIT IT
     public function hit()
     {
-        $playerAddCard = $this->deck->drawCard();
-        array_push($this->cards, $playerAddCard);
-
-        $score = $this->getScore();
-        if ($score > 21) {
-            echo '<div class="alert alert-danger text-center font-weight-bold rounded-0 " role="alert"> You lose, dealer wins!</div>';
+        if ($this->getScore() <= 21) {
+            $playerAddCard = $this->deck->drawCard();
+            array_push($this->cards, $playerAddCard);
+        }
+        if ($this->getScore() > 21) {
+            $this->lost = true;
         }
     }
+
 
     public function hold(): bool
     {
@@ -64,52 +66,17 @@ class Player
 
     public function stop()
     {
-        return $this->lost = true;
+        return $this->lost;
     }
 }
 
 
 class Dealer extends Player
 {
-
     public function dealerHit(Deck $deck)
     {
-        if ($this->getScore() <= 15) {
+        while ($this->getScore() <= 15) {
             parent::hit($deck);
         }
     }
 }
-
-
-
-// public function hit()
-//     {
-//         $playerAddCard = $this->deck->drawCard();
-//         array_push($this->cards, $playerAddCard);
-
-//         $score = $this->getScore();
-//         if ($score > 21) {
-//             echo '<div class="alert alert-danger text-center font-weight-bold rounded-0 " role="alert"> You lose, dealer wins!</div>';
-//         }
-//     }
-
-// class Dealer extends Player
-// {
-//     public function __construct(Deck $deck)
-//     {
-//         $this->deck = $deck;
-//         $playerCard1 = $deck->drawCard();
-//         $playerCard2 = $deck->drawCard();
-//         $this->cards = [$playerCard1, $playerCard2];
-//     }
-
-//     public function dealerHit(Deck $deck)
-//     {
-//         $playerAddCard = $this->deck->drawCard();
-//         array_push($this->cards, $playerAddCard);
-
-//         if ($this->getScore() <= 15) {
-//             parent::hit($deck);
-//         }
-//     }
-// }
